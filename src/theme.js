@@ -23,6 +23,26 @@ const theme = extendTheme({
   },
   components: {
     // Name of the component
+
+    // Custom ScrollBar
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          '*::-webkit-scrollbar': {
+            width: '8px',
+            height: '8px'
+          },
+          '*::-webkit-scrollbar-thumb': {
+            backgroundColor: '#bdc3c7',
+            borderRadius: '8px'
+          },
+          '*::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: '#7f8c8d',
+            borderRadius: '8px'
+          }
+        }
+      }
+    },
     MuiButton: {
       styleOverrides: {
         // Name of the slot
