@@ -15,6 +15,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/Help';
 import Profiles from './Menus/Profiles';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function AppBar() {
   return (
@@ -43,7 +44,7 @@ function AppBar() {
           <Recent />
           <Starred />
           <Templates />
-          <Button variant="outlined">Create</Button>
+          <Button variant="outlined" startIcon={<AddCircleIcon />}>Create</Button>
         </Box>
 
       </Box>
