@@ -36,7 +36,6 @@ function BoardBar() {
       gap: 1, // Để khi thu nhỏ quá không bị sát nhau
       overflowX: 'auto', // Lấy width tự động khi bị thu quá nhỏ tránh trường hợp không lấy hết được
       bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#3a4b5d' : '#26a1ff'),
-      borderBottom: '1px solid white',
       paddingX: 2
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }} >
