@@ -42,7 +42,7 @@ function ListColumns() {
             py: 1
           }}
         >
-          Add new column123
+          Add new column
         </Button>
       </Box>
     </Box>
