@@ -3,7 +3,7 @@ import Column from './Column/Column';
 import Button from '@mui/material/Button';
 import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
-function ListColumns() {
+function ListColumns({ columns }) {
 
   return (
     <Box sx={{
@@ -15,13 +15,13 @@ function ListColumns() {
       overflowY: 'hidden',
       '&::-webkit-scrollbar-track': { m: 1 }
     }}>
-      <Column />
-      <Column />
-      <Column />
-      <Column />
-      <Column />
-      <Column />
-      <Column />
+      {columns?.map((column) => {
+        // Khi map thì return cần có id nếu không sẽ bị lỗi
+        // Có thể dùng key={index} trong trường hợp không có id
+        return <Column key={column._id} column={column} />
+      // Sort hand
+      // {columns?.map(column => <Column key={column._id} />)}
+      })}
 
       {/* Box add new column CTA*/}
       <Box sx={{
