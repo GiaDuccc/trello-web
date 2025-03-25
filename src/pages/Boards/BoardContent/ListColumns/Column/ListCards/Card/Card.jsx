@@ -24,7 +24,7 @@ function Card({ card }) {
     transform: CSS.Translate.toString(transform),
     transition,
     opacity: isDragging ? 0.5 : undefined,
-    border: isDragging ? '1px solid #2ecc71' : undefined
+    border: isDragging ? '1px solid rgb(91, 158, 224)' : undefined
   };
 
   const shouldShowCardActions = () => {
@@ -37,10 +37,11 @@ function Card({ card }) {
       sx={{
         cursor: 'pointer',
         boxShadow: '0 1px 1px rgba(0, 0, 0, 0.2)',
-        overflow: 'unset'
+        overflow: 'unset',
+        display: card?.FE_PlaceholderCard ? 'none' : 'block'
       }}
     >
-      {/* Trong đoạn code dưới nếu card?.cover là truthy thì nó sẽ thực thi 
+      {/* Trong đoạn code dưới nếu card?.cover là truthy thì nó sẽ thực thi
       đoạn code sau dấu && ... */}
       { card?.cover && <CardMedia sx={{ height: 140 }} image= { card.cover }/> }
       <CardContent sx={{ p: 1.5, '&:last-child': { p: 1.5 } }}>
