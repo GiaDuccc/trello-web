@@ -22,6 +22,8 @@ import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import TextField from '@mui/material/TextField';
 import CloseIcon from '@mui/icons-material/Close';
+import { toast } from 'react-toastify'
+
 
 function Column({ column }) {
   // isDragging: đang drag, dùng làm phần giữ chỗ
@@ -57,7 +59,7 @@ function Column({ column }) {
 
   const addNewCard = () => {
     if (!newCardTitle) {
-      // console.log('please enter Card title')
+      toast.error('please enter Card title', { position: 'bottom-right', theme: 'colored' })
       return
     }
     // console.log(newCardTitle)
