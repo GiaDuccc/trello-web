@@ -1,3 +1,5 @@
-Hay dùng trong Material 
-- Badge: Dùng để hiện ra dot kiểu dạng có thông báo mới
-- Tooltip: Khi hover vào sẽ hiện ra cái title hay là cái doc nhỏ phía dưới
+Light Mode:
+![Light Mode](./public/light-mode.png)
+
+Dark Mode:
+![Dark Mode](./public/dark-mode.png)

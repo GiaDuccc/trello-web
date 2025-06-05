@@ -17,7 +17,6 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AddCardIcon from '@mui/icons-material/AddCard';
 import DragHandleIcon from '@mui/icons-material/DragHandle';
 import ListCards from './ListCards/ListCards';
-import { mapOrder } from '~/utils/sorts';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import TextField from '@mui/material/TextField';
@@ -49,7 +48,8 @@ function Column({ column, createNewCard }) {
   const handleClick = (event) => { setAnchorEl(event.currentTarget); };
   const handleClose = () => { setAnchorEl(null); };
 
-  const orderedCards = mapOrder(column?.cards, column?.cardOrderIds, '_id');
+  // Card đã được sắp xếp ở component cha cao nhất (boards/_id.jsx) vid 71 giải thích
+  const orderedCards = column.cards;
 
 
   const [openNewCardForm, setOpenNewCardForm] = useState(false)
@@ -57,7 +57,7 @@ function Column({ column, createNewCard }) {
 
   const [newCardTitle, setNewCardTitle] = useState('')
 
-  const addNewCard = async () => {
+  const addNewCard = () => {
     if (!newCardTitle) {
       toast.error('please enter Card title', { position: 'bottom-right', theme: 'colored' })
       return
@@ -75,7 +75,7 @@ function Column({ column, createNewCard }) {
      * - Với việc sử dụng Redux như vậy thì code sẽ Clean chuẩn chỉnh hơn rất nhiều.
      */
 
-    await createNewCard(newCardData)
+    createNewCard(newCardData)
 
     // Đóng trạng thái thêm Card mới & clear input
     toggleOpenNewCardForm()
